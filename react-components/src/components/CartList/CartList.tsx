@@ -16,10 +16,12 @@ export default class CartList extends Component {
 
   render() {
     return (
-      <div className={styles.list}>
-        {this.state.data.map((item: Item) => (
-          <Cart key={item.id} item={item} />
-        ))}
+      <div>
+        <ul className={styles.list}>
+          {this.state.data.map((item: Item) => (
+            <Cart key={item.id} item={item} />
+          ))}
+        </ul>
       </div>
     );
   }

@@ -18,14 +18,14 @@ export default class Header extends Component<HeaderProps> {
   render() {
     return (
       <header className={styles.header}>
-        <div className={styles.links}>
+        <nav className={styles.links}>
           <NavLink to="/about" onClick={() => this.setState({ page: 'About Us' })}>
             About Us
           </NavLink>
           <NavLink to="/" onClick={() => this.setState({ page: 'Main Page' })}>
             Main Page
           </NavLink>
-        </div>
+        </nav>
         <h1 className={styles.title}>{this.state.page}</h1>
       </header>
     );

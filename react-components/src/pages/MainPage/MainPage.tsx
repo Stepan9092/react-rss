@@ -15,6 +15,7 @@ export default class MainPage extends Component {
     return (
       <>
         <input
+          data-testid="search"
           type="text"
           className={styles.input}
           value={this.state.input}
