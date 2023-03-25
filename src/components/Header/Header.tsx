@@ -25,6 +25,9 @@ export default class Header extends Component<HeaderProps> {
           <NavLink to="/" onClick={() => this.setState({ page: 'Main Page' })}>
             Main Page
           </NavLink>
+          <NavLink to="/form" onClick={() => this.setState({ page: 'Form' })}>
+            Form
+          </NavLink>
         </nav>
         <h1 className={styles.title}>{this.state.page}</h1>
       </header>
