@@ -1,0 +1,58 @@
+input,
+select {
+  outline: none;
+  border: 1px solid #000000;
+  border-radius: 2px;
+}
+
+.formTitle {
+  font-size: 24px;
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+}
+
+.inputContainer {
+  gap: 10px;
+}
+
+.radioContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.radio {
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.checkboxContainer {
+  display: flex;
+}
+
+.unvalid {
+  color: rgb(173, 0, 0);
+}
+
+.form {
+  box-sizing: border-box;
+  width: 300px;
+  border: 2px solid #ff90b1;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.submit {
+  margin-top: 10px;
+  background-color: #ff90b1;
+  cursor: pointer;
+  height: 25px;
+  border-radius: 5px;
+}
