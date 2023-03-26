@@ -122,7 +122,7 @@ export default class Form extends Component {
             />
           </label>
           <div>
-            <p className={styles.title}>Country</p>
+            <p className={styles.title}>Country:</p>
             <select ref={this.state.formData.country}>
               <option>United States</option>
               <option>Mexico</option>
