@@ -5,6 +5,11 @@ select {
   border-radius: 2px;
 }
 
+.cnt {
+  display: flex;
+  gap: 30px;
+}
+
 .formTitle {
   font-size: 24px;
   margin: 0;

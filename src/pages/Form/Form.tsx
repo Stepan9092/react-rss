@@ -1,38 +1,12 @@
 import React, { Component } from 'react';
 import styles from './Form.module.css';
+import CardList from '../../components/CardList/CardList';
+import { TCard, TFormData, TFormValid } from 'types';
 
 type TState = {
   formData: TFormData;
   formValid: TFormValid;
   cardList: TCard[];
-};
-
-type TFormData = {
-  name: React.RefObject<HTMLInputElement>;
-  male: React.RefObject<HTMLInputElement>;
-  female: React.RefObject<HTMLInputElement>;
-  birthday: React.RefObject<HTMLInputElement>;
-  country: React.RefObject<HTMLSelectElement>;
-  confirmation: React.RefObject<HTMLInputElement>;
-  photo: React.RefObject<HTMLInputElement>;
-};
-
-type TFormValid = {
-  name: boolean;
-  gender: boolean;
-  birthday: boolean;
-  country: boolean;
-  confirmation: boolean;
-  photo: boolean;
-};
-
-type TCard = {
-  name: string;
-  gender: string;
-  birthday: string;
-  country: string;
-  confirmation: boolean;
-  photo: string;
 };
 
 export default class Form extends Component {
@@ -81,12 +55,13 @@ export default class Form extends Component {
     newValidState.photo = newCard.photo ? true : false;
     newValidState.confirmation = newCard.confirmation;
 
-    if (Object.values(this.state.formValid).every((el) => el === true)) {
+    if (Object.values(newValidState).every((el) => el === true)) {
       this.setState({
         ...this.state,
         formValid: newValidState,
         cardList: [...this.state.cardList, newCard],
       });
+      alert('data has been saved');
       e.currentTarget.reset();
     } else {
       this.setState({
@@ -98,7 +73,7 @@ export default class Form extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.cnt}>
         <form onSubmit={this.handleSubmit} className={styles.form}>
           <h2 className={styles.formTitle}>Form:</h2>
           <label className={styles.inputContainer}>
@@ -179,6 +154,7 @@ export default class Form extends Component {
           </label>
           <input className={styles.submit} type="submit" value={'submit'} />
         </form>
+        <CardList items={this.state.cardList} />
       </div>
     );
   }

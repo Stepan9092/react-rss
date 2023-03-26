@@ -10,9 +10,12 @@ export default class Header extends Component<HeaderProps> {
 
   componentDidMount() {
     const { pathname } = this.props.location;
-    if (pathname !== '/about' && pathname !== '/') {
+    if (pathname !== '/about' && pathname !== '/' && pathname !== '/form') {
       this.setState({ page: 'Page not found' });
     }
+    if (pathname === '/about') this.setState({ page: 'About Us' });
+    if (pathname === '/form') this.setState({ page: 'Form' });
+    if (pathname === '/') this.setState({ page: 'Main Page' });
   }
 
   render() {
