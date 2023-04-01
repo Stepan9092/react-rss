@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
-import { HeaderProps } from 'utils/withRouter';
+import { HeaderProps } from './Props';
 
-export default function Header(props: HeaderProps) {
+export default function Header({ location }: HeaderProps) {
   const [page, setPage] = useState('Main Page');
   useEffect(() => {
-    const { pathname } = props.location;
+    const { pathname } = location;
     if (pathname !== '/about' && pathname !== '/' && pathname !== '/form') {
       setPage('Page not found');
     }
     if (pathname === '/about') setPage('About Us');
     if (pathname === '/form') setPage('Form');
     if (pathname === '/') setPage('Main Page');
-  }, [props.location]);
+  }, [location]);
 
   return (
     <header className={styles.header}>
