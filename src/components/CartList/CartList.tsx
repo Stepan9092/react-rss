@@ -1,28 +1,23 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import styles from './CartList.module.css';
 import { Item } from '../../types/index';
 
-export default class CartList extends Component {
-  state = {
-    data: [],
-  };
+export default function CartList() {
+  const [data, setData] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
-      .then((json) => this.setState({ data: json }));
-  }
-
-  render() {
-    return (
-      <div>
-        <ul className={styles.list}>
-          {this.state.data.map((item: Item) => (
-            <Cart key={item.id} item={item} />
-          ))}
-        </ul>
-      </div>
-    );
-  }
+      .then((json) => setData(json));
+  }, []);
+  return (
+    <div>
+      <ul className={styles.list}>
+        {data.map((item: Item) => (
+          <Cart key={item.id} item={item} />
+        ))}
+      </ul>
+    </div>
+  );
 }
