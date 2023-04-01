@@ -1,39 +1,34 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import { HeaderProps } from 'utils/withRouter';
 
-export default class Header extends Component<HeaderProps> {
-  state = {
-    page: 'Main Page',
-  };
-
-  componentDidMount() {
-    const { pathname } = this.props.location;
+export default function Header(props: HeaderProps) {
+  const [page, setPage] = useState('Main Page');
+  useEffect(() => {
+    const { pathname } = props.location;
     if (pathname !== '/about' && pathname !== '/' && pathname !== '/form') {
-      this.setState({ page: 'Page not found' });
+      setPage('Page not found');
     }
-    if (pathname === '/about') this.setState({ page: 'About Us' });
-    if (pathname === '/form') this.setState({ page: 'Form' });
-    if (pathname === '/') this.setState({ page: 'Main Page' });
-  }
+    if (pathname === '/about') setPage('About Us');
+    if (pathname === '/form') setPage('Form');
+    if (pathname === '/') setPage('Main Page');
+  }, [props.location]);
 
-  render() {
-    return (
-      <header className={styles.header}>
-        <nav className={styles.links}>
-          <NavLink to="/about" onClick={() => this.setState({ page: 'About Us' })}>
-            About Us
-          </NavLink>
-          <NavLink to="/" onClick={() => this.setState({ page: 'Main Page' })}>
-            Main Page
-          </NavLink>
-          <NavLink to="/form" onClick={() => this.setState({ page: 'Form' })}>
-            Form
-          </NavLink>
-        </nav>
-        <h1 className={styles.title}>{this.state.page}</h1>
-      </header>
-    );
-  }
+  return (
+    <header className={styles.header}>
+      <nav className={styles.links}>
+        <NavLink to="/about" onClick={() => setPage('About Us')}>
+          About Us
+        </NavLink>
+        <NavLink to="/" onClick={() => setPage('Main Page')}>
+          Main Page
+        </NavLink>
+        <NavLink to="/form" onClick={() => setPage('Form')}>
+          Form
+        </NavLink>
+      </nav>
+      <h1 className={styles.title}>{page}</h1>
+    </header>
+  );
 }
