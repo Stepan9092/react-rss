@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
+    "lint": "eslint . --ignore-path .gitignore .",
     "test": "vitest run",
     "coverage": "vitest run --coverage"
   },
