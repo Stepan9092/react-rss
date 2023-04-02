@@ -9,7 +9,7 @@ export default function Layout() {
 
   return (
     <>
-      <Header location={location} />
+      <Header pathname={location.pathname} />
       <main className={styles.main}>
         <Outlet />
       </main>

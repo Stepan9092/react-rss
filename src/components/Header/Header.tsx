@@ -3,17 +3,16 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import { HeaderProps } from './Props';
 
-export default function Header({ location }: HeaderProps) {
+export default function Header({ pathname }: HeaderProps) {
   const [page, setPage] = useState('Main Page');
   useEffect(() => {
-    const { pathname } = location;
     if (pathname !== '/about' && pathname !== '/' && pathname !== '/form') {
       setPage('Page not found');
     }
     if (pathname === '/about') setPage('About Us');
     if (pathname === '/form') setPage('Form');
     if (pathname === '/') setPage('Main Page');
-  }, [location]);
+  }, [pathname]);
 
   return (
     <header className={styles.header}>

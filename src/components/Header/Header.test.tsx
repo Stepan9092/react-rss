@@ -3,16 +3,13 @@ import { render, screen } from '@testing-library/react';
 import { describe, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 
-import { withRouter } from '../../utils/withRouter';
 import Header from './Header';
 
-const HeaderWithRouter = withRouter(Header);
-
 describe('Header', () => {
-  it('header has links', () => {
+  it('header has heading', () => {
     render(
       <BrowserRouter>
-        <HeaderWithRouter />
+        <Header pathname={'/'} />
       </BrowserRouter>
     );
     expect(screen.getByRole('heading')).toBeInTheDocument();
