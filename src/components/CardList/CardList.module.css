@@ -1,0 +1,18 @@
+.container {
+  flex-grow: 1;
+  border: 2px solid #ff90b1;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+}
