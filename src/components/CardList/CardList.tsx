@@ -9,7 +9,7 @@ export default function CardList({ items }: Props) {
       <h2 className={styles.title}>Cards:</h2>
       <div className={styles.list}>
         {items.map((item) => (
-          <Card item={item} key={Date.now().toString() + item.birthday} />
+          <Card item={item} key={Date.now().toString() + Math.random()} />
         ))}
       </div>
     </div>

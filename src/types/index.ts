@@ -15,11 +15,20 @@ export interface Rating {
   count: number;
 }
 
-export type TCard = {
+export interface ICard {
   name: string;
   gender: string;
   birthday: string;
   country: string;
   confirmation: boolean;
   photo: string;
-};
+}
+
+export interface IData {
+  name: string;
+  gender: string;
+  birthday: string;
+  country: string;
+  confirmation: boolean;
+  photo: FileList;
+}
