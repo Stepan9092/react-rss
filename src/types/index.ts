@@ -1,13 +1,15 @@
 export type Items = Item[];
 
 export interface Item {
-  id: number;
+  id: string;
+  owner: string;
+  secret: string;
+  server: string;
+  farm: number;
   title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: Rating;
+  ispublic: number;
+  isfriend: number;
+  isfamily: number;
 }
 
 export interface Rating {

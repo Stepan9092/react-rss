@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Cart from '../Cart/Cart';
 import styles from './CartList.module.css';
 import { Item } from '../../types/index';
+import { Props } from './Props';
 
-export default function CartList() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((response) => response.json())
-      .then((json) => setData(json));
-  }, []);
+export default function CartList({ data }: Props) {
   return (
     <div>
       <ul className={styles.list}>
