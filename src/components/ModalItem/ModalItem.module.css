@@ -1,0 +1,8 @@
+.loading {
+  display: block;
+  margin: 0 auto;
+}
+
+.image {
+  max-height: 50%;
+}
