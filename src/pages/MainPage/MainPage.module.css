@@ -1,15 +1,1 @@
-.input {
-  display: block;
-  outline: none;
-  border: 2px solid #ff90b1;
-  min-width: 40%;
-  border-radius: 8px;
-  height: 20px;
-}
 
-.search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}

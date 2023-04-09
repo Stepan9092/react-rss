@@ -1,0 +1,52 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.24s;
+}
+
+.overlay.active {
+  padding: 10px 0;
+  overflow: auto;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.box {
+  padding: 20px;
+  overflow: auto;
+  max-height: 100vh;
+  box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+  -o-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  background: #ccc;
+  border-radius: 10px;
+  width: 60%;
+  min-height: 60%;
+  max-height: 80%;
+}
+
+.close {
+  cursor: pointer;
+  width: 30px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  transition: 0.3s all;
+}
+
+.close:hover {
+  transform: scale(1.1);
+}
