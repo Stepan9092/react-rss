@@ -11,10 +11,22 @@ export default function PhotoInfo({ data }: Props) {
         src={getPhotoUrl(data.id, data.server, data.secret)}
         alt="photo"
       />
-      <div className={styles.text}>Title: {data.title._content}</div>
-      <div className={styles.text}>Owner: {data.owner.username}</div>
-      <div className={styles.text}>Description: {data.description._content || 'none'}</div>
-      <div className={styles.text}>Date: {data.dates.taken}</div>
+      <div className={styles.text}>
+        {' '}
+        <span>Title:</span> {data.title._content}
+      </div>
+      <div className={styles.text}>
+        {' '}
+        <span>Owner:</span> {data.owner.username}
+      </div>
+      <div className={styles.text}>
+        {' '}
+        <span>Description:</span> {data.description._content || 'none'}
+      </div>
+      <div className={styles.text}>
+        {' '}
+        <span>Date:</span> {data.dates.taken}
+      </div>
     </div>
   );
 }

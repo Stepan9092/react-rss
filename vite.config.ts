@@ -27,6 +27,7 @@ export default defineConfig({
         '**/main.tsx',
         '**/index.tsx',
         '**/Layout.tsx',
+        '**/Props.ts',
       ],
     },
   },
