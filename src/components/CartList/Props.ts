@@ -1,6 +1,6 @@
-import { Item } from 'types';
+import { IPhoto } from 'types';
 
 export interface Props {
-  data: Item[];
+  data: IPhoto[];
   isLoading: boolean;
 }

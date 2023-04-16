@@ -1,6 +1,17 @@
-export type Items = Item[];
+export interface IResponce {
+  photos: IPhotos;
+  stat: string;
+}
 
-export interface Item {
+export interface IPhotos {
+  page: number;
+  pages: number;
+  perpage: number;
+  total: number;
+  photo: IPhoto[];
+}
+
+export interface IPhoto {
   id: string;
   owner: string;
   secret: string;
