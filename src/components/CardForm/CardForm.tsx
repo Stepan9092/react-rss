@@ -2,15 +2,18 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { ICard, IData } from 'types';
 import styles from './CardForm.module.css';
-import { Props } from './Props';
+import { useAppDispatch } from '../../store/hooks';
+import { setCards } from '../../store/formCards/formCardsSlice';
 
-export default function CardForm({ cardList, setCardList }: Props) {
+export default function CardForm() {
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
   } = useForm<IData>();
+
+  const dispatch = useAppDispatch();
 
   const onSubmit = (data: IData) => {
     const reader = new FileReader();
@@ -24,7 +27,7 @@ export default function CardForm({ cardList, setCardList }: Props) {
         country: data.country,
         confirmation: data.confirmation,
       };
-      setCardList([...cardList, newCard]);
+      dispatch(setCards(newCard));
     };
     reader.readAsDataURL(file);
     reset();

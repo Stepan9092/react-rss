@@ -7,6 +7,8 @@ export default function Search() {
   const [searchValue, setSearchValue] = useState(useAppSelector((state) => state.search.search));
   const dispatch = useAppDispatch();
 
+  const onSubmit = () => dispatch(setSearch(searchValue));
+
   return (
     <div className={styles.search}>
       <input
@@ -15,8 +17,9 @@ export default function Search() {
         className={styles.input}
         value={searchValue}
         onChange={(event) => setSearchValue(event.target.value)}
+        onKeyDown={(event) => event.key === 'Enter' && onSubmit()}
       />
-      <button onClick={() => dispatch(setSearch(searchValue))}>search</button>
+      <button onClick={() => onSubmit()}>search</button>
     </div>
   );
 }

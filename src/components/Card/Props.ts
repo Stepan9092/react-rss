@@ -1,4 +1,4 @@
-import { TCard } from './../../types/index';
+import { ICard } from './../../types/index';
 export type Props = {
-  item: TCard;
+  item: ICard;
 };

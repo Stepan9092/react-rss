@@ -1,7 +1,7 @@
-import { Item } from '../../types/index';
+import { IPhoto } from '../../types/index';
 
 export type Props = {
-  item: Item;
+  item: IPhoto;
   setCurItemId: React.Dispatch<React.SetStateAction<string>>;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
