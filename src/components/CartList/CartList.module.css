@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-inline-start: 0px;
+}
+
+.loading {
+  margin: 0 auto;
+  display: block;
+}
+
+.text {
+  font-size: 24px;
+  text-align: center;
+}
